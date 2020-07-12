@@ -1,0 +1,37 @@
+<section class="hero is-dark is-bold is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-3-tablet is-4-desktop is-6-widescreen">
+                    <form [formGroup]="formGroup" class="box">
+                        <div class="field">
+                            <label class="label">E-mail</label>
+                            <div class="control">
+                                <input formControlName="email" class="input" type="email" placeholder="E-mail" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control">
+                                <input formControlName="password" class="input" type="password" placeholder="Password" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <button (click)="submit()" class="button is-dark is-rounded">Sign Up</button>
+                        </div>
+                        <br>
+                        <a class="button is-danger" (click)="signInWithGoogle()">
+                            <span class="icon is-medium">
+                                <i class="fa fa-google"></i>
+                            </span>
+                            <span>Login with Google</span>
+                        </a>
+                        <div class="notification is-danger" *ngIf="error">
+                            {{error}}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
